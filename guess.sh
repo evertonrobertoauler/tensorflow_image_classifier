@@ -1,1 +1,1 @@
-docker run --rm --name=tensor-guess -v $PWD/$1:/tf_files -v $PWD/$2:/img/guess.jpg  xblaster/tensor-guess sh -c "./guess.sh" 2> /dev/null
+docker run --rm --name=tensor-guess -v $PWD/$1:/tf_files -v $PWD/$2:/img/guess.jpg  xblaster/tensor-guess sh -c "cp -rf label_image.py /tf_files; python /tf_files/label_image.py /img/guess.jpg"
